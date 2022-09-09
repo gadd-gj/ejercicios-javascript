@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: rgb(38, 224, 224);
+            border: 1px solid black;
+            border-radius: 5px;
+            color: white;
+            margin: auto;
+            text-align: center;
+            width: 200px;
+        }
+
+        p {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Tiempo</p>
+        <br />
+        <p id="hrs">00 </p> hrs
+        <p id="min">00 </p> min
+        <p id="demo">0 </p> ss
+    </div>
+</body>
+<script>
+    let sec = 0;
+    let min = 0;
+    let hrs = 0;
+    const element = document.getElementById("demo");
+    const minutos = document.getElementById("min");
+    const horas = document.getElementById("hrs");
+    (() => {
+        setInterval(function () {
+            element.innerHTML = sec += 1
+            if (sec === 60) {
+                minutos.innerHTML = min += 1;
+                sec = 0;
+            }
+            if (min === 60) {
+                horas.innerHTML = hrs += 1;
+                minutos.innerHTML = min = 0;
+            }
+        }, 1000);
+    })()
+
+</script>
+
+</html>

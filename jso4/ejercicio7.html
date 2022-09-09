@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Queue {
+        constructor() {
+            const list = [];
+
+            this.enqueue = function (type) {
+                list.push(type);
+                return type;
+            };
+
+            this.dequeue = function () {
+                return list.shift();
+            };
+        }
+    }
+
+    var q = new Queue;
+
+    q.enqueue(9); //agrega el elemento al array
+    q.enqueue(8);
+    q.enqueue(7);
+
+    console.log(q.dequeue()); //imprime el valor eliminado en el indice 0 del array 
+    console.log(q.dequeue());
+    console.log(q.dequeue());
+    console.log(q); //imprime el tipo de objeto que es 
+    console.log(Object.keys(q)); //imprime los atributos/propiedades del objeto en un array
+
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+</head>
+
+<body>
+    <ul>
+        <li id="C1" data-id="US" data-dial-code="1"> USA</li>
+        <li id="C2" data-id="CA" data-dial-code="1"> Canada</li>
+        <li id="C3" data-id="FF" data-dial-code="3"> France</li>
+    </ul>
+</body>
+
+<script>
+
+
+    /*  ALERTS  */
+
+    const usa = document.getElementById('C1');
+    const can = document.getElementById('C2');
+    const fran = document.getElementById('C3');
+
+    (() => {
+        usa.addEventListener('click', () => {
+            alert('ID: ' + usa.id + '\n' + 'ISO ID: ' + usa.getAttribute('data-id') + '\n' + 'Dial code: ' + usa.getAttribute('data-dial-code'))
+        });
+        
+        can.addEventListener('click', () => {
+            alert(
+                'ID: ' + can.id + '\n' + 'ISO ID: ' + can.getAttribute('data-id') + '\n' + 'Dial code: ' + can.getAttribute('data-dial-code'))
+        }); 
+        
+        fran.addEventListener('click', () => {
+            alert('ID: ' + fran.id + '\n' + 'ISO ID: ' + fran.getAttribute('data-id') + '\n' + 'Dial code: ' + fran.getAttribute('data-dial-code'))
+        });
+    })()
+
+</script>
+
+</html>

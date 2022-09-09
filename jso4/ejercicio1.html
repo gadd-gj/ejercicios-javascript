@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    (() => {
+        var anObject = {
+            foo: 'bar',
+            length: 'interesting',
+            '0': 'zero!',
+            '1': 'one!'
+        };
+
+        var anArray = ['zero.', 'one.']
+
+        console.log(anArray[0], anObject[0]);
+        console.log(anArray[1], anObject[1]);
+        console.log(anArray.length, anObject.length);
+        console.log(anArray.foo, anObject.foo);
+
+        console.log(typeof anArray == 'object', typeof anObject == 'object');
+        console.log(anArray instanceof Object, anObject instanceof Object);
+        console.log(anArray instanceof Array, anObject instanceof Array);
+        console.log(Array.isArray(anArray), Array.isArray(anObject));
+    })();
+</script>
+
+</html>

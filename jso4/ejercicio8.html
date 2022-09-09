@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Person {
+
+        constructor(firstName, lastName) {
+            this._firstName = firstName;
+            this._lastName = lastName;
+        };
+
+        get firstName() {
+            return this._firstName;
+        }
+
+        get lastName() {
+            return this._lastName;
+        }
+    }
+
+
+    let person = new Person('Gadd', 'Gomez');
+
+    console.log('Despues de instanciar Person: ' + person.firstName, person.lastName);
+
+    person.firstName = 'Hola';
+    person.lastName = 'Gom';
+
+    console.log('Despues de intentar modificar las propiedades de la instancia: ' + person.firstName, person.lastName);
+
+
+
+</script>
+
+</html>

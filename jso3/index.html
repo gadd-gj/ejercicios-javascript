@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        Generar una pagina html y el código javascript para que:
+            a. Al mover el ratón en cualquier punto de la ventana del navegador, se
+            muestre la posición del puntero respecto del navegador y respecto de la
+            página: 
+    -->
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        div#container {
+            border: 1px solid;
+            height: 150px;
+            margin: auto;
+            text-align: center;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body onmousemove="posicion(event)">
+    <div id="container">
+        <h3>Ratón</h3>
+        <br/>
+        <p>Puntero:[ <span id="puntero"> </span> ]</p>
+    </div>
+</body>
+<script>
+
+
+    var elemento = document.getElementById('puntero');
+
+    var posicion = (event) => {
+        var x = event.clientX;
+        var y = event.clientY;
+
+        elemento.innerHTML = + x + ' ' + y
+    }
+
+</script>
+
+</html>

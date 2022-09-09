@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="post-102">
+        <p>I like confirm modals</p>
+        <a data-deletepost="post-102">Delete Post</a>
+    </div>
+    <div id="post-103">
+        <p>Thtat's way too cool!</p>
+        <a data-deletepost="post-103">Delete Post</a>
+    </div>
+</body>
+<script>
+
+    var deleteBtn = document.querySelectorAll("[data-deletepost]");
+
+    function deletePost(post) { //se crea la función para eliminar los elementos 
+        var mensaje;
+        var opcion = confirm("¿Desea eliminar este post?"); //Cuadro de dialogo para confirmar la operación
+        if (opcion == true) { // se valida si le dio clic en aceptar
+            const id = post.srcElement.dataset.deletepost // se obtiene el data-deletepost
+            const postRemove = document.getElementById(id); // el data- es lo mismo que el id del div
+            document.body.removeChild(postRemove); // se elimina el div del body
+        } else {
+            alert('Se ha cancelado la operación');
+        }
+    }
+
+    for (let i = 0; i < deleteBtn.length; i++) { //Añade la función a escuchar a cada boton
+        deleteBtn[i].addEventListener('click', deletePost)
+    }
+
+    // for (let i = 0; i < deleteBtn.length; i++) {
+    //     deleteBtn[i].addEventListener('click', (post) => {
+    //         var mensaje;
+    //         var opcion = confirm("¿Desea eliminar este post?");
+    //         if (opcion == true) {
+    //             const id = post.srcElement.dataset.deletepost
+    //             const postRemove = document.getElementById(id);
+    //             document.body.removeChild(postRemove);
+    //         } else {
+    //             alert('Se ha cancelado la operación');
+    //         }
+    //     });
+    // }
+
+
+</script>
+
+</html>
